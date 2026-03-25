@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | JOOXX</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .projects-portal {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .portal-header h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .portal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 900px;
+            margin-top: 50px;
+        }
+
+        .portal-card {
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid var(--glass-border);
+            transition: var(--transition);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .portal-card i {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        .portal-card h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .portal-card p {
+            color: var(--text-muted);
+        }
+
+        .portal-card.youtube:hover {
+            border-color: #ff0000;
+            box-shadow: 0 10px 40px rgba(255, 0, 0, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .portal-card.youtube i { color: #ff0000; }
+
+        .portal-card.whatsapp:hover {
+            border-color: #25d366;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.2);
+            transform: translateY(-10px);
+        }
+
+        .portal-card.whatsapp i { color: #25d366; }
+
+        .back-home {
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <main class="projects-portal">
+        <div class="portal-header reveal active">
+            <h1>Choose a <span>Path</span></h1>
+            <p>Explore my creative works or inquire about my web services.</p>
+        </div>
+
+        <div class="portal-grid">
+            <a href="https://www.youtube.com/@CaptainJOOXX/featured" target="_blank" class="portal-card youtube reveal active">
+                <i class="fab fa-youtube"></i>
+                <h3>Music & Editing</h3>
+                <p>Visit my YouTube channel to see my latest editing works and music compositions.</p>
+            </a>
+
+            <a href="https://wa.me/917510942544" target="_blank" class="portal-card whatsapp reveal active" style="transition-delay: 0.1s;">
+                <i class="fab fa-whatsapp"></i>
+                <h3>Website Building</h3>
+                <p>Contact me on WhatsApp for more projects and inquiries about website development.</p>
+            </a>
+        </div>
+
+        <a href="index.html" class="back-home">Back to Home</a>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

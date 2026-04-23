@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Cheats | JOOXX</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cheats-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .cheats-header h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary), #25d366);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cheats-grid {
+            margin-top: 50px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .back-home {
+            margin-top: 50px;
+            color: var(--text-muted);
+            font-size: 14px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <main class="cheats-page">
+        <div class="cheats-header reveal active">
+            <h1>Gaming <span>Cheats</span></h1>
+            <p>Exclusive unlocks and tools for gaming enthusiasts.</p>
+        </div>
+
+        <div class="cheats-grid">
+            <div class="cheat-card reveal active">
+                <div class="cheat-icon">
+                    <i class="fas fa-cube"></i>
+                </div>
+                <h3>Minecraft Bedrock Unlocker</h3>
+                <p>A specialized tool for unlocking features in Minecraft Bedrock edition.</p>
+                <a href="https://www.mediafire.com/file/34gv1tx80cajyll/mc_bedrock_unlocker.rar/file" target="_blank" class="btn-glow">
+                    <i class="fas fa-download"></i> Click this to download
+                </a>
+            </div>
+        </div>
+
+        <a href="index.html" class="back-home">Back to Home</a>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -470,6 +470,55 @@ img {
     box-shadow: 0 10px 40px rgba(157, 80, 187, 0.15);
 }
 
+/* Cheats Section */
+.cheats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.cheat-card {
+    background: var(--bg-card);
+    padding: 50px;
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+    text-align: center;
+    max-width: 500px;
+}
+
+.cheat-card i {
+    font-size: 60px;
+    background: linear-gradient(135deg, #00d2ff, #25d366);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 25px;
+}
+
+.cheat-card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.cheat-card p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cheat-card:hover {
+    transform: translateY(-10px);
+    border-color: #25d366;
+    box-shadow: 0 10px 40px rgba(37, 211, 102, 0.2);
+}
+
+.cheat-card .btn-glow {
+    display: inline-block;
+    padding: 15px 35px;
+    font-size: 18px;
+}
+
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;

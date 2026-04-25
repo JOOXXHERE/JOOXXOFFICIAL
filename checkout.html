@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | JOOXX</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .checkout-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+        }
+
+        .checkout-container {
+            width: 100%;
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            background: var(--bg-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            overflow: hidden;
+            padding: 60px;
+        }
+
+        .checkout-details h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .checkout-details p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .service-list {
+            margin-bottom: 40px;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .service-item i {
+            color: var(--primary);
+        }
+
+        .test-drive {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary);
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .payment-section {
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid var(--glass-border);
+        }
+
+        .qr-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .qr-card img {
+            width: 250px;
+            height: 250px;
+            display: block;
+        }
+
+        .price-tag {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .price-tag span {
+            font-size: 18px;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .payment-note {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-top: 20px;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        @media (max-width: 850px) {
+            .checkout-container {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+            .checkout-page {
+                padding: 120px 20px 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body class="dark-theme">
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+
+    <main class="checkout-page">
+        <div class="checkout-container reveal active">
+            <div class="checkout-details">
+                <h1>Unlock the <span>JOOXX</span> Experience</h1>
+                <p>Get a custom-crafted digital presence, premium video editing, and exclusive sound design for your brand.</p>
+                
+                <div class="service-list">
+                    <div class="service-item"><i class="fas fa-check-circle"></i> Custom Web Architecture</div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i> Cinematic Video Production</div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i> Original Music Composition</div>
+                    <div class="service-item"><i class="fas fa-check-circle"></i> SEO & Performance Optimization</div>
+                </div>
+
+                <a href="projects.html" target="_blank" class="btn-clean">Test Demo Portfolio</a>
+                <br>
+                <a href="https://www.youtube.com/@CaptainJOOXX/featured" target="_blank" class="test-drive">Test what I have done (YouTube)</a>
+            </div>
+
+            <div class="payment-section">
+                <div class="price-tag">₹1 <span>/ Startup Package</span></div>
+                <p style="margin-bottom: 25px;">Scan to secure this limited-time offer</p>
+                
+                <div class="qr-card">
+                    <!-- Real UPI QR Code Generation using qrserver API -->
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=7510942544@paytm%26pn=JOOXX%26am=1%26cu=INR" alt="Payment QR Code">
+                </div>
+
+                <div class="payment-methods">
+                    <i class="fab fa-google-pay" style="font-size: 30px; margin: 0 10px;"></i>
+                    <i class="fas fa-mobile-alt" style="font-size: 25px; margin: 0 10px;"></i>
+                    <i class="fab fa-apple-pay" style="font-size: 30px; margin: 0 10px;"></i>
+                </div>
+                
+                <p class="payment-note">Secure UPI Payment Gateway. <br> Instant confirmation after scan.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="main.js"></script>
+</body>
+</html>

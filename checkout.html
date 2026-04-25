@@ -140,27 +140,28 @@
     <main class="checkout-page">
         <div class="checkout-container reveal active">
             <div class="checkout-details">
-                <h1>Unlock the <span>JOOXX</span> Experience</h1>
-                <p>Get a custom-crafted digital presence, premium video editing, and exclusive sound design for your brand.</p>
+                <h1>Live <span>1-to-1</span> Call</h1>
+                <p>Just <strong>₹1</strong> and you can talk to me live. Discuss your projects, get technical advice, or just brainstorm ideas.</p>
                 
-                <div class="service-list">
-                    <div class="service-item"><i class="fas fa-check-circle"></i> Custom Web Architecture</div>
-                    <div class="service-item"><i class="fas fa-check-circle"></i> Cinematic Video Production</div>
-                    <div class="service-item"><i class="fas fa-check-circle"></i> Original Music Composition</div>
-                    <div class="service-item"><i class="fas fa-check-circle"></i> SEO & Performance Optimization</div>
-                </div>
+                <form id="registration-form" action="https://formspree.io/f/xknadjre" method="POST" style="margin-top: 40px;">
+                    <div class="form-group">
+                        <label for="email" style="display: block; margin-bottom: 10px; color: var(--text-muted); font-size: 14px;">Your Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="name@example.com" required 
+                               style="width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 10px; color: white; margin-bottom: 20px;">
+                    </div>
+                    <button type="submit" class="btn-clean" style="width: 100%; border-radius: 10px;">Register Session</button>
+                </form>
 
-                <a href="projects.html" target="_blank" class="btn-clean">Test Demo Portfolio</a>
-                <br>
-                <a href="https://www.youtube.com/@CaptainJOOXX/featured" target="_blank" class="test-drive">Test what I have done (YouTube)</a>
+                <div id="success-message" style="display: none; margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--primary); border-radius: 15px; color: var(--primary);">
+                    <i class="fas fa-check-circle"></i> 1 to 1 call is registered and you will get information soon.
+                </div>
             </div>
 
             <div class="payment-section">
-                <div class="price-tag">₹1 <span>/ Startup Package</span></div>
-                <p style="margin-bottom: 25px;">Scan to secure this limited-time offer</p>
+                <div class="price-tag">₹1 <span>/ Session Fee</span></div>
+                <p style="margin-bottom: 25px;">Scan to complete payment</p>
                 
                 <div class="qr-card">
-                    <!-- Real UPI QR Code Generation using qrserver API -->
                     <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=upi://pay?pa=7510942544@paytm%26pn=JOOXX%26am=1%26cu=INR" alt="Payment QR Code">
                 </div>
 
@@ -174,6 +175,31 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const form = document.getElementById('registration-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            
+            // Show success message immediately as requested
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+
+            // Send to Formspree in background
+            try {
+                await fetch(form.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+            } catch (err) {
+                console.error("Form submission failed, but user saw success message.");
+            }
+        });
+    </script>
 
     <script src="main.js"></script>
 </body>

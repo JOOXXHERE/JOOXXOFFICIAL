@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     links.forEach(link => {
         link.addEventListener('mouseenter', () => {
             cursorOutline.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            cursorOutline.style.backgroundColor = 'rgba(0, 210, 255, 0.1)';
+            cursorOutline.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
         });
         link.addEventListener('mouseleave', () => {
             cursorOutline.style.transform = 'translate(-50%, -50%) scale(1)';

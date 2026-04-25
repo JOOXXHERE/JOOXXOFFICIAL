@@ -64,21 +64,13 @@
             color: var(--text-muted);
         }
 
-        .portal-card.youtube:hover {
-            border-color: #ff0000;
-            box-shadow: 0 10px 40px rgba(255, 0, 0, 0.2);
+        .portal-card.youtube:hover, .portal-card.whatsapp:hover {
+            border-color: var(--white);
             transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.05);
         }
 
-        .portal-card.youtube i { color: #ff0000; }
-
-        .portal-card.whatsapp:hover {
-            border-color: #25d366;
-            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.2);
-            transform: translateY(-10px);
-        }
-
-        .portal-card.whatsapp i { color: #25d366; }
+        .portal-card.youtube i, .portal-card.whatsapp i { color: var(--white); }
 
         .back-home {
             margin-top: 50px;

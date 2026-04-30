@@ -158,13 +158,12 @@
                     <input type="hidden" name="fvv" value="1">
                     <input type="hidden" name="pageHistory" value="0">
                     <input type="hidden" name="fbzx" value="4096226219261270335">
-                    <button type="submit" class="btn-clean" style="width: 100%; border-radius: 10px; color: black; font-weight: bold;">Pay ₹1 & Book Call</button>
+                    <button type="submit" class="btn-clean" style="width: 100%; border-radius: 10px; color: black; font-weight: bold;">Book Call</button>
                 </form>
 
                 <div id="success-message" style="display: none; margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--primary); border-radius: 10px; color: var(--primary); font-size: 14px; text-align: center;">
-                    <i class="fas fa-spinner fa-spin" style="margin-bottom: 10px; font-size: 20px;"></i><br>
-                    Registration saved! Redirecting to payment app...<br><br>
-                    <a href="upi://pay?pa=8590960674@fam&pn=Sree%20Kuttan&am=1&cu=INR" style="color: var(--primary); text-decoration: underline;">Click here if you are not redirected</a>
+                    <i class="fas fa-check-circle" style="margin-bottom: 10px; font-size: 20px;"></i><br>
+                    You are registered! You will receive an email shortly with details.
                 </div>
             </div>
 
@@ -191,14 +190,8 @@
                     mode: 'no-cors',
                     body: formData
                 });
-                
-                // Redirect to UPI payment link
-                setTimeout(() => {
-                    window.location.href = "upi://pay?pa=8590960674@fam&pn=Sree%20Kuttan&am=1&cu=INR";
-                }, 1000);
             } catch (err) {
                 console.error("Form submission failed, but user saw success message.");
-                window.location.href = "upi://pay?pa=8590960674@fam&pn=Sree%20Kuttan&am=1&cu=INR";
             }
         });
     </script>

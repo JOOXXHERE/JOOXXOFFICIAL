@@ -151,6 +151,24 @@
                 Status: Under Construction
             </div>
 
+            <div class="call-box" style="background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border); border-radius: 15px; padding: 30px; width: 100%; max-width: 400px; margin-bottom: 30px;">
+                <h3 style="font-size: 24px; margin-bottom: 20px;">1:1 call with me</h3>
+                <form id="registration-form" action="https://docs.google.com/forms/d/e/1FAIpQLSfHvPKR98Z6UxrvZWNefIS4r5iQWYkeOmm6xeRufBupeS5dvw/formResponse" method="POST">
+                    <div class="form-group">
+                        <input type="email" id="email" name="entry.2037064031" placeholder="Enter your email address" required 
+                               style="width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 10px; color: white; margin-bottom: 20px;">
+                    </div>
+                    <input type="hidden" name="fvv" value="1">
+                    <input type="hidden" name="pageHistory" value="0">
+                    <input type="hidden" name="fbzx" value="4096226219261270335">
+                    <button type="submit" class="btn-clean" style="width: 100%; border-radius: 10px;">Register 1:1 call</button>
+                </form>
+
+                <div id="success-message" style="display: none; margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--primary); border-radius: 10px; color: var(--primary); font-size: 14px;">
+                    <i class="fas fa-check-circle"></i> you are registered and you will get an email as soon.
+                </div>
+            </div>
+
             <a href="index.html" class="btn-clean">Return to Portfolio</a>
         </div>
     </main>
@@ -167,12 +185,12 @@
             form.style.display = 'none';
             successMessage.style.display = 'block';
 
-            // Send to Formspree in background
+            // Send to Google Forms in background
             try {
                 await fetch(form.action, {
                     method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                    mode: 'no-cors',
+                    body: formData
                 });
             } catch (err) {
                 console.error("Form submission failed, but user saw success message.");
